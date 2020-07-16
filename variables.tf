@@ -11,4 +11,5 @@ variable "tags" {
     default     = {
         source  = "devops"
         env     = "development"
+    }
 }
