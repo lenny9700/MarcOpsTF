@@ -7,3 +7,8 @@ variable "location" {
   description = "The Azure location where all resources in this example should be created"
   default     =   "West Europe"
 }
+variable "tags" {
+    default     = {
+        source  = "devops"
+        env     = "development"
+}
