@@ -23,7 +23,7 @@ resource "azurerm_virtual_network" "example" {
   name                = "${var.prefix}-network"
   resource_group_name = azurerm_resource_group.example.name
   location            = azurerm_resource_group.example.location
-  tags                = azurerm_resource_group.Core.tags
+  tags                = azurerm_resource_group.example.tags
   address_space       = ["10.0.0.0/16"]
 }
 
@@ -31,14 +31,14 @@ resource "azurerm_subnet" "example" {
   name                 = "development"
   virtual_network_name = azurerm_virtual_network.example.name
   resource_group_name  = azurerm_resource_group.example.name
-  tags                 = azurerm_resource_group.Core.tags
+  tags                 = azurerm_resource_group.example.tags
   address_prefixes     = ["10.0.1.0/24"]
 }
 
 resource "azurerm_network_interface" "example" {
   name                = "${var.prefix}-nic"
   location            = azurerm_resource_group.example.location
-  tags                = azurerm_resource_group.Core.tags
+  tags                = azurerm_resource_group.example.tags
   resource_group_name = azurerm_resource_group.example.name
 
   ip_configuration {
@@ -52,7 +52,7 @@ resource "azurerm_windows_virtual_machine" "example" {
   name                = "${var.prefix}-machine"
   resource_group_name = azurerm_resource_group.example.name
   location            = azurerm_resource_group.example.location
-  tags                = azurerm_resource_group.Core.tags
+  tags                = azurerm_resource_group.example.tags
   size                = "Standard_A2_v2"
   admin_username      = "adminuser"
   admin_password      = "P@$$w0rd1234!"
