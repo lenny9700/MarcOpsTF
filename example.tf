@@ -31,7 +31,6 @@ resource "azurerm_subnet" "example" {
   name                 = "development"
   virtual_network_name = azurerm_virtual_network.example.name
   resource_group_name  = azurerm_resource_group.example.name
-  tags                 = azurerm_resource_group.example.tags
   address_prefixes     = ["10.0.1.0/24"]
 }
 
@@ -71,4 +70,4 @@ resource "azurerm_windows_virtual_machine" "example" {
     sku       = "2016-Datacenter"
     version   = "latest"
   }
-}
+}               
