@@ -8,8 +8,9 @@ provider "azurerm" {
 terraform {
     backend "azurerm" {
         resource_group_name  = "marcopstf"    
-        storage_account_name = "tfstatedevops"
-        container_name       = "terraform.tfstate"
+        storage_account_name = "marcopstf"
+        container_name       = "tfstatedevops"
+        key                  = "terraform.tfstate"
       }
 }
 
